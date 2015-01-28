@@ -30,6 +30,8 @@
     <paper-fab icon="add"></paper-fab>
   </core-toolbar>
 
+
+
   <section>
     <p>A simple Polymer My First Time
       <a href="http://www.polymer-project.org/docs/elements/paper-elements.html">
@@ -38,6 +40,22 @@
       &lt;paper-fab&gt;, &lt;paper-tabs&gt;</code>, and <code>&lt;paper-toast&gt;</code>.
     </p>
     <paper-checkbox label="Got it!"></paper-checkbox>
+  </section>
+
+  <section>
+    <template id="toastGroup" is="auto-binding">
+      <style type="text/css">
+        paper-button {
+            background: green;
+            color: yellow;
+            position: fixed;
+            bottom: 20px;
+        }</style>
+      <paper-button raised right on-click="{{showToast}}">
+        Show Toast
+      </paper-button>
+      <paper-toast id="toast" text="Sample toast here."></paper-toast>
+    </template>
   </section>
 
   <section>
@@ -55,15 +73,12 @@
     </p>
   </section>
 
-  <section>
-    <template id="toastGroup" is="auto-binding">
-      <paper-button raised right on-click="{{showToast}}">
-        Show Toast
-      </paper-button>
-      <paper-toast id="toast" text="Sample toast here."></paper-toast>
-    </template>
-  </section>
-
+  
   <script src="main.js"></script>
+  <script type="text/javascript">
+    setTimeout(function(){
+      //document.querySelector('#toast').show();
+    },2000);    
+  </script>
 </body>
 </html>
